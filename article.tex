@@ -91,11 +91,13 @@ Late last year the US passed the new National Quantum Initiative Act pledging ar
 \section{VQE}
 \section{PEA}
 \section{Experimental realisation (SQUID)}
+ \fbox{\begin{minipage}[c]{32em}%
 The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
 
 Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which facilitates the creation of large integrated quantum circuits.
 
-The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift.
+The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
+
 
 \bibliography{ref}
 \end{document}
