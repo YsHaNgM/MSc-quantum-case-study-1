@@ -77,9 +77,9 @@ Now, imagine that I asked you to compute the energy surface of a given molecule;
 which constitutes of the ‘original algorithm for quantum chemistry’.
 
 \subsection{The VQE Algorithm}
-Before we run our algorithm, it is imperative to understand that in quantum mechanics, the properties of a system are characterised by a state. Thus, we first need to prepare an initial state of the system (think of how you prepared the cup for the coffee following boiling water to be poured in). This is done by representing the state in a chosen vector v­­­­0. The vectors chosen are trial solution (ansatz) since solutions are not chosen in reference to any specific value as such.
+Before we run our algorithm, it is imperative to understand that in quantum mechanics, the properties of a system are characterised by a state. Thus, we first need to prepare an initial state of the system (think of how you prepared the cup for the coffee following boiling water to be poured in). This is done by representing the state in a chosen vector $v_0$. The vectors chosen are trial solution (ansatz) since solutions are not chosen in reference to any specific value as such.
  
-Once a variable is selected, we can find an estimate value of the energy corresponding to the chosen variable by measuring the average energy. The method utilised predicts the ground state, the lowest possible energy level of an atom. The value of the variable and estimate energy are then fed through a programme; this proposes settings for a new variable – let us call this variable v­­­­1. Comparing to our coffee example, it has been decided that either a new blend of coffee is necessary as the current coffee might be perhaps too strong!
+Once a variable is selected, we can find an estimate value of the energy corresponding to the chosen variable by measuring the average energy. The method utilised predicts the ground state, the lowest possible energy level of an atom. The value of the variable and estimate energy are then fed through a programme; this proposes settings for a new variable – let us call this variable $v_1$­. Comparing to our coffee example, it has been decided that either a new blend of coffee is necessary as the current coffee might be perhaps too strong!
  
 This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy.\\
 
@@ -90,7 +90,7 @@ In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQ
 
 \begin{enumerate}
 \item Preparation: Prepare the initial state of the system in terms of the variable theta by applying a quantum circuit. Implementing the unitary coupled cluster (UCC) method enables the algorithm to predict the ground state.
-\item Measurement: Measure each local Hamiltonian, $H_{gamma}$  and its corresponding scalar $g_{gamma}$ to find the average value of the Hamiltonian (see Eq. 1 in [article number]).
+\item Measurement: Measure each local Hamiltonian, $H_{gamma}$  and its corresponding scalar $g_{gamma}$ to find the average value of the Hamiltonian \cite[p.2]{o2016scalable}.
 \item Minimisation: Use a classical tool to find new solutions of theta in order to find the minimum eigenenergy of the Hamiltonian.
 \item Repetition: By feeding the settings for theta(vector) into the classical minimisation routine, the new settings for a new parameter of theta(vector) i.e. theta(vector)’. This process is repeated for n iterations until the parameter converges towards to specific value; this will enable an ideal state of the system to be obtained. From this, one can deduce a particular value for $E_{0}$, the smallest energy eigenvalue.
 \end{enumerate}
