@@ -30,7 +30,7 @@
 \date{\today}
 \maketitle
 \section{Introduction}
-Richard Feynman’s words are as true today as when he spoke them: “Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful problem, because it doesn't look so easy.”
+Richard Feynman’s words are as true today as when he spoke them almost forty years ago: “Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful problem, because it doesn't look so easy.”
 
 Simulation of physical systems is one of the most crucial practical applications of computation by far.  On the macroscopic scale of our lives, for instance, buildings are engineered safe and cost efficient using ﬁnite element analysis and modeling. Aeronautics rely hugely on computational ﬂuid dynamics simulations. Even nuclear weapons are tested by exhaustive computational modeling.
 
@@ -68,8 +68,8 @@ The wavefunction of a quantum system is a mathematical construct describing the 
 One of the reasons that developing new approaches to tackling electronic structure calculations are of importance is that they are extremely computationally expensive. Indeed one of the original motivations for the field of quantum computing was the desire to simulate quantum systems in nature by using quantum systems. A prominent driving factor in the interest in and development of quantum computing is the aim to create quantum hardware and software that will allow for efficient quantum simulations of chemical systems. A problem of tantamount importance in quantum chemistry is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy eigenvalues define a great deal of properties of interest in the molecule. This is of great interest in for example the development of pharmaceuticals where companies have an extremely laborious testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
 \section{Techniques in paper}
 If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of teaspoons of coffee (depends on how strong you like your coffee), boil the kettle, pour the hot water into the cup and lastly stir. You have now made your cup of instant coffee by following a set of instructions.
- 
-Now, imagine that I asked you to compute the energy surface of a given molecule; how would you carry out this task? You would execute an algorithm that produces a numerical value. In Scalar Quantum of Molecular Energies two techniques used to determine the energy surface for a hydrogen molecule are discussed as follows: 
+
+Now, imagine that I asked you to compute the energy surface of a given molecule; how would you carry out this task? You would execute an algorithm that produces a numerical value. In Scalar Quantum of Molecular Energies two techniques used to determine the energy surface for a hydrogen molecule are discussed as follows:
 \begin{itemize}
 \item The Variational Quantum Eigensolver (VQE)
 \item The Quantum Phase Estimation Algorithm (PEA)
@@ -77,10 +77,11 @@ Now, imagine that I asked you to compute the energy surface of a given molecule;
 which constitutes of the ‘original algorithm for quantum chemistry’.
 
 \subsection{The VQE Algorithm}
+
 Before we run our algorithm, it is imperative to understand that in quantum mechanics, the properties of a system are characterised by a state. Thus, we first need to prepare an initial state of the system (think of how you prepared the cup for the coffee following boiling water to be poured in). This is done by representing the state in a chosen vector $v_0$. The vectors chosen are trial solution (ansatz) since solutions are not chosen in reference to any specific value as such.
  
 Once a variable is selected, we can find an estimate value of the energy corresponding to the chosen variable by measuring the average energy. The method utilised predicts the ground state, the lowest possible energy level of an atom. The value of the variable and estimate energy are then fed through a programme; this proposes settings for a new variable – let us call this variable $v_1$­. Comparing to our coffee example, it has been decided that either a new blend of coffee is necessary as the current coffee might be perhaps too strong!
- 
+
 This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy.\\
 
 \noindent
@@ -90,9 +91,9 @@ In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQ
 
 \begin{enumerate}
 \item Preparation: Prepare the initial state of the system in terms of the variable theta by applying a quantum circuit. Implementing the unitary coupled cluster (UCC) method enables the algorithm to predict the ground state.
-\item Measurement: Measure each local Hamiltonian, $H_{gamma}$  and its corresponding scalar $g_{gamma}$ to find the average value of the Hamiltonian \cite[p.2]{o2016scalable}.
+\item Measurement: Measure each local Hamiltonian, $H_{\gamma}$  and its corresponding scalar $g_{\gamma}$ to find the average value of the Hamiltonian \cite[p.2]{o2016scalable}.
 \item Minimisation: Use a classical tool to find new solutions of theta in order to find the minimum eigenenergy of the Hamiltonian.
-\item Repetition: By feeding the settings for theta(vector) into the classical minimisation routine, the new settings for a new parameter of theta(vector) i.e. theta(vector)’. This process is repeated for n iterations until the parameter converges towards to specific value; this will enable an ideal state of the system to be obtained. From this, one can deduce a particular value for $E_{0}$, the smallest energy eigenvalue.
+\item Repetition: By feeding the settings for $\vec{\theta}$ into the classical minimisation routine, the new settings for a new parameter of $\vec{\theta}$ i.e. $\vec{\theta}^{\prime}$. This process is repeated for n iterations until the parameter converges towards to specific value; this will enable an ideal state of the system to be obtained. From this, one can deduce a particular value for $E_{0}$, the smallest energy eigenvalue.
 \end{enumerate}
  \end{minipage}}
 
@@ -108,7 +109,7 @@ Now let us recap Quantum Fourier Transformation, one transforms the tensor produ
 \begin{footnotesize}
 \[
 	\ket{j_{1} j_{2} \cdots j_{n}}\rightarrow \frac{\left(\ket{0}+e^{2 \pi i 0. j_{n}}\ket{1}\right)\left(\ket{0}+e^{2 \pi i 0. j_{n-1} j_{n}}\ket{1}\right) \cdots\left( \ket{0}+e^{2 \pi i 0. j_{1} j_{2} \cdots j_{n-1} j_{n} }\ket{1}\right)}{2^{\frac{n}{2}}}
-\] 
+\]
 \end{footnotesize}
 
 \end{minipage}}
@@ -125,9 +126,9 @@ The Xmon qubits are placed inside a dilution refrigerator which is at a temperat
 
 \section{Main Achievement of paper}
 As it is known, building a quantum computer comes with many challenges, one being the aspect of scalability. One of the advantages of using PEA to compute electronic structures of a molecule is better asymptotic scaling which would prove useful for larger molecules than Hydrogen. However, this is problematic as one would need to utilise more steps in the Trotterisation approximation which would in turn incur higher exponential costs. Hence, it was determined that a single Trotter step is not enough to accurately predict chemical rates for a Hydrogen molecule. In addition, for a single trotter step, each simulation using PEA was ran using different orderings of local Hamiltonians in order to find the optimal Trotter sequence for each bond length. For larger molecules, this is deemed intractable which becomes extremely difficult for the preprocessing requirements for a classical computer.
- 
+
 On the contrary, VQE was proved to be more effective due to its robustness to error. This is due to its success in predicting the chemical dissociation rate below the chemical accuracy threshold. Due to its short measurement sequences, it is more viable to use VQE for quantum simulations. Consequently, the quantum coherence of the system would be preserved which would limit the quantum error correction.
- 
+
 Although a quantum simulation such as the VQE is almost foolproof it may still not be adequate to calculate exact numerical solutions that are characteristic of various types of molecules and their interactions. Quantum computing shows promise to eliminate such errors whilst using a larger number of qubits. However, these factors work against each other. If such a machine can be built, there would be more states and thus information to manipulate whilst withstanding error. This could revolutionise applications such as pharmaceuticals where cures and treatments for complex or incurable diseases such as Cancer, Prion disease and so forth could be engineered. If (or when should I say) this is possible,  we would have a machine taking on the roles of a chemist, problem solver and designer simultaneously and combined into one entity!
 \section{Conclusion and outlook}
 As this is the first scalable simulation of molecular energies on any type of quantum hardware it represents an important step in the history of quantum computing applications. The results indicate that for near-term quantum devices without effective error correction the adaptive approach represented by the Variational Quantum Eigensolver may have better error resilience than that of standard gate model approach represented by the Phase Estimation Algorithm. The expectation is that this work will pave the way for the development of further techniques for intractable calculations in quantum chemistry. And the final aim is that eventually these variational quantum chemistry techniques will allow for numerically exact simulations of chemical reaction rates, which are of great industrial commercial value. In particular, the efficiency - requiring only short state preparation and measurement procedures, and so it is without the normal substantial overhead required for quantum error correction - and robustness to error displayed by the experimental implementation of the variational quantum eigensolver technique indicates that this technique might succeed where classical techniques fail in solving traditionally intractable problems.
