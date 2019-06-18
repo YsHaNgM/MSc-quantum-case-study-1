@@ -85,7 +85,8 @@ Once a variable is selected, we can find an estimate value of the energy corresp
 This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy.\\
 
 \noindent
-\fbox{\begin{minipage}[c]{32em}%
+\setlength{\fboxsep}{0.5em}
+\fbox{\begin{minipage}[c]{31em}%
  \centerline{\textbf{VQE}}
 In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQE comprises of classical and quantum features making it possible to use both classical and quantum resources to determine solutions to problems that are difficult to solve using a classical computer. The flow chart indicates the key instructions of implementing the VQE algorithm. The steps are explained in further detail as follows:
 
@@ -98,12 +99,12 @@ In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQ
  \end{minipage}}
 
 \subsection{The Quantum Phase Estimation Algorithm (PEA)}
-Similarly, to the VQE algorithm, one must ensure that the system is prepared in an initial state, but with the exception that the state must have a sufficient overlap with the ground state. Once the state is prepared in our desired state, an approximation is applied to the phase of the operator. The operator $U = e^{-iHt}$ enables the initial state $\ket{\psi(0)}$ to change over time to the state $e^{-iEt}\ket{\psi(0)}$. Consequently, the initial state is mapped onto a superposition state of various qubits, which is called the ancilla qubits. After that, the state is acted on in turn inducing a phase on the system. Since the way in which the system evolves is controlled, it is now entangled with the initialised state. Next, we measure the phase obtained corresponding to each value of energy. The system as a result collapses to a single state with an associated probability. We repeat this algorithm for a higher number of ancilla qubits \cite[p.2]{tansuwannont2015quantum} until the lowest eigenenergy is obtained, or more precisely the energy of the ground state.\\
+Similarly, to the VQE algorithm, one must ensure that the system is prepared in an initial state, but with the exception that the state must have a sufficient overlap with the ground state. Once the state is prepared in our desired state, an approximation is applied to the phase of the operator. The operator $\hat{U} = e^{-iHt}$ enables the initial state $\ket{\psi(0)}$ to change over time to the state $e^{-iEt}\ket{\psi(0)}$. Consequently, the initial state is mapped onto a superposition state of various qubits, which is called the ancilla qubits. After that, the state is acted on in turn inducing a phase on the system. Since the way in which the system evolves is controlled, it is now entangled with the initialised state. Next, we measure the phase obtained corresponding to each value of energy. The system as a result collapses to a single state with an associated probability. We repeat this algorithm for a higher number of ancilla qubits \cite[p.2]{tansuwannont2015quantum} until the lowest eigenenergy is obtained, or more precisely the energy of the ground state.\\
 
-\noindent
-\fbox{\begin{minipage}[c]{32em}%
- \centerline{\textbf{PEA}}
- The molecular energies can be obtained by the time evolution of molecular Hamiltonian. As any state $\ket{\psi(t)}$ evolved by unitary $U$ can be represent by applying phase difference onto initial state $e^{-iEt}\ket{\psi(0)}$. Phase estimation algorithm (PEA) is used then to find this relative phase and convert it into energy. In order to preform PEA we need to prepare two parts of qubits. First n qubits of superposition state $\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits onto a multiple controlled-U gate, the eigenvalue of each unitary $U$ will transform to each one of qubits in first part.
+\noindent\setlength{\fboxsep}{0.5em}
+\fbox{\begin{minipage}[c]{31em}%
+\centerline{\textbf{PEA}}
+The molecular energies can be obtained by the time evolution of molecular Hamiltonian. As any state $\ket{\psi(t)}$ evolved by unitary can be represent by applying phase difference onto initial state $e^{-iEt}\ket{\psi(0)}$. Phase estimation algorithm (PEA) is used then to find this relative phase and convert it into energy. In order to preform PEA we need to prepare two parts of qubits. First n qubits of superposition state $\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits onto a multiple controlled-U gate, the eigenvalue of each unitary $\hat{U}$ will transform to each one of qubits in first part.
 
 Now let us recap Quantum Fourier Transformation, one transforms the tensor product of multiple states onto phase of some superposition states.
 \begin{footnotesize}
@@ -115,8 +116,8 @@ Now let us recap Quantum Fourier Transformation, one transforms the tensor produ
 \end{minipage}}
 \\
 
-\noindent
-\fbox{\begin{minipage}[c]{32em}%
+\noindent\setlength{\fboxsep}{0.5em}
+\fbox{\begin{minipage}[c]{31em}%
 \centerline{\textbf{Experimental realisation (SQUID)}}
 The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
 
