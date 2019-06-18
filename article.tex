@@ -68,7 +68,12 @@ One of the reasons that developing new approaches to tackling electronic structu
 \section{Techniques in paper}
 If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of teaspoons of coffee (depends on how strong you like your coffee), boil the kettle, pour the hot water into the cup and lastly stir. You have now made your cup of instant coffee by following a set of instructions.
  
-Now, imagine that I asked you to compute the energy surface of a given molecule; how would you carry out this task? You would execute an algorithm that produces a numerical value. In Scalar Quantum of Molecular Energies two techniques used to determine the energy surface for a hydrogen molecule are discussed which are: 1) The Variational Quantum Eigensolver (VQE) and 2) The Quantum Phase Estimation Algorithm (PEA) which constitutes of the ‘original algorithm for quantum chemistry’.
+Now, imagine that I asked you to compute the energy surface of a given molecule; how would you carry out this task? You would execute an algorithm that produces a numerical value. In Scalar Quantum of Molecular Energies two techniques used to determine the energy surface for a hydrogen molecule are discussed as follows: 
+\begin{itemize}
+\item The Variational Quantum Eigensolver (VQE)
+\item The Quantum Phase Estimation Algorithm (PEA)
+\end{itemize}
+which constitutes of the ‘original algorithm for quantum chemistry’.
 
 \subsection{The VQE Algorithm}
 Before we run our algorithm, it is imperative to understand that in quantum mechanics, the properties of a system are characterised by a state. Thus, we first need to prepare an initial state of the system (think of how you prepared the cup for the coffee following boiling water to be poured in). This is done by representing the state in a chosen vector v­­­­0. The vectors chosen are trial solution (ansatz) since solutions are not chosen in reference to any specific value as such.
@@ -78,10 +83,28 @@ Once a variable is selected, we can find an estimate value of the energy corresp
 This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy.
 
 \subsection{The Quantum Phase Estimation Algorithm (PEA)}
-Similarly to the VQE algorithm, one must ensure that the system is prepared in an initial state, but with the exception that the state must have a sufficient overlap with the ground state.
+Similarly, to the VQE algorithm, one must ensure that the system is prepared in an initial state, but with the exception that the state must have a sufficient overlap with the ground state. Once the state is prepared in our desired state, an approximation is applied to the operator. Consequently, the initial state is mapped onto a superposition state of various qubits, which is called the ancilla qubits. After that, the state is acted on in turn inducing a phase on the system. Since the way in which the system evolves is controlled, it is now entangled with the initialised state. Next, we measure the phase obtained corresponding to each value of energy. The system as a result collapses to a single state with an associated probability. We repeat this algorithm for a higher number of ‘special’ qubits until the lowest eigenenergy is obtained, or more precisely the energy of the ground state.
 
-Similarly, to the VQE algorithm, one must ensure that the system is prepared in an initial state, but with the exception that the state must have a sufficient overlap with the ground state. Once the state is prepared in our desired state, an approximation is applied to the operator. Consequently, the initial state is mapped onto a superposition state, a state that is made up of different vectors. After that, the state is acted on in turn inducing a phase on the system. Since the way in which the system evolves is controlled, it is now entangled with the initialised state. Next, we measure the phase obtained corresponding to each value of energy. The system as a result collapses to a single state with an associated probability. We repeat this algorithm for a higher number of ‘special’ qubits until the lowest eigenenergy is obtained, or more precisely the energy of the ground state.
+\fbox{\begin{minipage}[c]{32em}%
+ \centerline{\textbf{PEA}}
+ The molecular energies can be obtained by the time evolution of molecular Hamiltonian, which is a unitary operator $U = e^{-iHt}$. We can first prepare an initial state that strongly overlaps the ground state of molecular hydrogen. As any state $\ket{\psi(t)}$ evolved by unitary $U$ can be represent by applying phase difference onto initial state $e^{-iEt}\ket{\psi(0)}$. Phase estimation algorithm (PEA) is used then to find this relative phase and convert it into energy. In order to preform PEA we need to prepare two parts of qubits. First n qubits of superposition state $\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits onto a multiple controlled-U gate, the eigenvalue of each unitary $U$ will transform to each one of qubits in first part.
 
+Now let us recap Quantum Fourier Transformation, one transforms the tensor product of multiple states onto phase of some superposition states.
+\begin{footnotesize}
+\[
+	\ket{j_{1} j_{2} \cdots j_{n}}\rightarrow \frac{\left(\ket{0}+e^{2 \pi i 0. j_{n}}\ket{1}\right)\left(\ket{0}+e^{2 \pi i 0. j_{n-1} j_{n}}\ket{1}\right) \cdots\left( \ket{0}+e^{2 \pi i 0. j_{1} j_{2} \cdots j_{n-1} j_{n} }\ket{1}\right)}{2^{\frac{n}{2}}}
+\] 
+\end{footnotesize}
+
+\end{minipage}}
+
+ \fbox{\begin{minipage}[c]{32em}%
+ \centerline{\textbf{Experimental realisation (SQUID)}}
+The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
+
+Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which facilitates the creation of large integrated quantum circuits.
+
+The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
 
 \section{Main Achievement of paper}
 As it is known, building a quantum computer comes with many challenges, one being the aspect of scalability. One of the advantages of using PEA to compute electronic structures of a molecule is better asymptotic scaling which would prove useful for larger molecules than Hydrogen. However, this is problematic as one would need to utilise more steps in the Trotterisation approximation which would in turn incur higher exponential costs. Hence, it was determined that a single Trotter step is not enough to accurately predict chemical rates for a Hydrogen molecule. In addition, for a single trotter step, each simulation using PEA was ran using different orderings of local Hamiltonians in order to find the optimal Trotter sequence for each bond length. For larger molecules, this is deemed intractable which becomes extremely difficult for the preprocessing requirements for a classical computer.
@@ -97,13 +120,10 @@ Late last year the US passed the new National Quantum Initiative Act pledging ar
 \section{Technical Boxes}
 \section{VQE}
 \section{PEA}
+ 
+
 \section{Experimental realisation (SQUID)}
- \fbox{\begin{minipage}[c]{32em}%
-The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
 
-Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which facilitates the creation of large integrated quantum circuits.
-
-The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
 
 
 \bibliography{ref}
