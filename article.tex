@@ -175,15 +175,15 @@ The molecular energies can be obtained by the time evolution of molecular Hamilt
    $\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits
    onto a multiple controlled-U gate, the eigenvalue of each unitary $\hat{U}$ will transform to each one of qubits in first part.
 
-Now let us recap Quantum Fourier Transformation, one transforms the tensor product of multiple states onto phase of some superposition states.
+Now let us recap Quantum Fourier Transformation, one transforms the tensor product of multiple states onto phase of some superposition states:
 \begin{footnotesize}
 \[
-	\ket{j_{1} j_{2} \cdots j_{n}}\rightarrow \frac{\left(\ket{0}+e^{2 \pi i 0. j_{n}}\ket{1}\right)\left(\ket{0}+e^{2 \pi i 0. j_{n-1} j_{n}}\ket{1}\right) \cdots\left( \ket{0}+e^{2 \pi i 0. j_{1} j_{2} \cdots j_{n-1} j_{n} }\ket{1}\right)}{2^{\frac{n}{2}}}
+	\ket{j_{1} j_{2} \cdots j_{n}}\rightarrow \frac{\overbrace{\left(\ket{0}+e^{2 \pi i 0. j_{n}}\ket{1}\right)\left(\ket{0}+e^{2 \pi i 0. j_{n-1} j_{n}}\ket{1}\right) \cdots\left( \ket{0}+e^{2 \pi i 0. j_{1} j_{2} \cdots j_{n-1} j_{n} }\ket{1}\right)}^{\text{our prepared superposition qubits}}}{2^{\frac{n}{2}}}.
 \]
 \end{footnotesize}
-
+As we can see, the result of QFT is just the first part of qubits we prepared. Therefore we would apply the reverse QFT onto those qubits, and outputs a single state contains all information about phase we want!
 \end{minipage}}
-\\
+
 
 \subsection{The Experimental Implementation}
 
@@ -207,19 +207,11 @@ and companies, each with their own pros and cons. Some of the types of implement
 \noindent\setlength{\fboxsep}{0.5em}
 \fbox{\begin{minipage}[c]{31em}%
 \centerline{\textbf{Experimental realisation (SQUID)}}
-The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of
-superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are
- charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features,
-  which include easy fabrication, fast qubit control and long qubit coherence times.
+The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
 
-Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types
-of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which facilitates
- the creation of large integrated quantum circuits.
+Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which facilitates the creation of large integrated quantum circuits.
 
-The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and
-control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement
- operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit
- from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
+The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
 
 \section{Main Achievement of paper}
 As it is known, building a quantum computer comes with many challenges, one being the aspect of scalability. One of the advantages of using PEA to
