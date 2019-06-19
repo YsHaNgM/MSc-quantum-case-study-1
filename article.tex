@@ -41,19 +41,19 @@ However, even in light of it's phenomenally far-reaching success in almost all a
 has its limitations. When it comes to simulating microscopic systems, classical techniques require significant computational overhead which scales to
 unreasonable proportions with increasing system size. In quantum computational chemistry simulations, each subatomic orbital and their interactions
 needs to be considered to achieve an accurate and realistic simulation of the microscopic system. Since the state of one orbital can be affected by
-all of the others, an exponential number of states in the basis of molecular orbitals needs to be accounted for. This is what we call ‘many body’ problems.
-No matter how far apart two orbitals are, their quantum states cannot be described independently, the repeated interactions between particles create
+all of the others, an exponential number of states in the basis of molecular orbitals needs to be accounted for. Problems of this type are classified
+to be ‘many-body’ problems. No matter how far apart two orbitals are, their quantum states cannot be described independently, the repeated interactions between particles create
 quantum correlations, this phenomenon is known as entanglement.
 
 A radically different computing paradigm is then employed to combat this problem, that is quantum computation. It harnesses the principles of quantum
 mechanics, hence solves these classically intractable problems of simulation more accurately, faster, with a more fine-grained simulation.
 
-The amount of information needed to describe interactions in a quantum system would quickly fill up the memory in a classical computer, instead,
-a quantum computer can do tasks of this nature efficiently through the use of quantum bits, or qubits to information storage and computation
-\cite{trabesinger2012quantum}. Since the classical storage unit ‘bit’ is binary system based on strings of 0s and 1s, but quantum computer encodes
- them into two distinguishable quantum states, and one qubit can represent multiple states once by quantum phenomenon ‘superposition’. Similarly,
- if we perform a searching algorithm on a classical string, the enumerate steps would be the number of bits within this string. Comparably, our
- processing step will reduce a lot more as we only need to compute once in a quantum processor.
+The amount of information needed to describe interactions in a quantum system would quickly fill up the memory of a classical computer, instead,
+a quantum computer can do tasks of this nature efficiently through the use of quantum bits, or qubits, for information storage and computation
+\cite{trabesinger2012quantum}. Since the classical storage unit ‘bit’ is binary system based on strings of 0s and 1s, but a quantum computer would
+encode them into two distinguishable quantum states, and one qubit can represent multiple states at once in the form of the quantum phenomenon of
+‘superposition’. Similarly, if we perform a search algorithm on a classical string, the enumerate steps would be the number of bits within this
+string. Comparably, our processing step will reduce a lot more as we only need to compute once in a quantum processor.
 
 \section{History}
 Molecules consist of various atoms and the elementary unit of an atom is electron and nucleus. When we consider atomic energy, electron-nuclei,
