@@ -79,7 +79,7 @@ which constitutes of the ‘original algorithm for quantum chemistry’.
 \subsection{The VQE Algorithm}
 
 Before we run our algorithm, it is imperative to understand that in quantum mechanics, the properties of a system are characterised by a state. Thus, we first need to prepare an initial state of the system (think of how you prepared the cup for the coffee following boiling water to be poured in). This is done by representing the state in a chosen vector $v_0$. The vectors chosen are trial solution (ansatz) since solutions are not chosen in reference to any specific value as such.
- 
+
 Once a variable is selected, we can find an estimate value of the energy corresponding to the chosen variable by measuring the average energy. The method utilised predicts the ground state, the lowest possible energy level of an atom. The value of the variable and estimate energy are then fed through a programme; this proposes settings for a new variable – let us call this variable $v_1$­. Comparing to our coffee example, it has been decided that either a new blend of coffee is necessary as the current coffee might be perhaps too strong!
 
 This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy.\\
@@ -115,6 +115,25 @@ Now let us recap Quantum Fourier Transformation, one transforms the tensor produ
 
 \end{minipage}}
 \\
+
+\subsection{The Experimental Implementation}
+
+The most widely accepted prerequisites to build a viable physical quantum computing technology were proposed by the American physicist
+David DiVincenzo in 2000, with a few additional conditions added since. The original five DiVincenzo Criteria are:
+
+\begin{enumerate}
+\item Scalable physical system of well-characterised qubits.
+\item Ability to initialize the state of the qubits to a simple fiducial state.
+\item Long decoherence times, much longer than the “gate-operation” time.
+\item Universal set of quantum gates.
+\item Qubit-specific measurement capability.
+\end{enumerate}
+
+Now there are a number of different approaches to building physical quantum computing hardware being pursued by various research groups
+and companies, each with their own pros and cons. Some of the types of implemented qubits include trapped ions, nitrogen-vacancy centres,
+ quantum silicon photonics and superconducting, to name but a few. The type used here is the Xmon transmon qubit, a superconducting qubit
+  built around a superconducting quantum interference device, or SQUID. Variations of the superconducting qubit are being developed by
+  companies such as D-wave, IBM and Rigetti in the current race for quantum supremacy.
 
 \noindent\setlength{\fboxsep}{0.5em}
 \fbox{\begin{minipage}[c]{31em}%
