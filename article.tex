@@ -59,10 +59,9 @@ string. Comparably, our processing step will reduce a lot more as we only need t
 Molecules are composed of collections of atoms, and the units that make up an atom are electrons and the atomic nucleus. When we consider the
  atomic energy then we must take into account both electron-nuclei and electron-electron interactions. The molecular energy consists of interactions
  between multiple atoms, and interactions between electrons from different nuclei. Molecular energy can be pictured as a large
- package that contains many small balls, and the sum of the energy of their collisions is the sum of interactions between atoms.
-
-Obviously, it demands massive computation to find out the package energy as it contains a huge amount of particles. Therefore, some approximations
- need to be made to simply our model, which necessitates the introduction of molecular mechanics.
+ package that contains many small balls, and the sum of the energy of their collisions is the sum of interactions between atoms. Obviously, it
+ demands massive computation to find out the package energy as it contains a huge amount of particles. Therefore, some approximations need to be
+  made to simply our model, which necessitates the introduction of molecular mechanics.
 
 Molecular mechanics models molecular systems using force fields in classical mechanics. Three approximations were made to reduce the computational
  complexity. Each atom is simulated as one particle; each particle has their designated attributes including radius, Polaris ability and net charge;
@@ -79,13 +78,10 @@ is to calculate the resistance force of an iron ball in a glass of water. We can
 
 But what if we want to reduce the computational complexity? One solution is to reduce the number of water molecules simulated, which is feasible given
  the relative much larger size of the iron ball. To make up for the loss in number of molecules, the rest if the parameters can be adapted. Whereby we
-can manipulate the parameters and the simulation gives slightly different solutions, but the overall trend is still the same as before.
-
-The computation complexity can still be compressed. We can repeat the process of reducing the number of molecules and adjusting the parameters
- and still generate acceptable solutions.
-
-This process is known as renormalisation group, and the results that this model generates are called low energy effective theory, in which the system
- size is reduced but the results are still accurate.
+can manipulate the parameters and the simulation gives slightly different solutions, but the overall trend is still the same as before. The computation
+ complexity can still be compressed. We can repeat the process of reducing the number of molecules and adjusting the parameters and still generate
+  acceptable solutions. This process is known as renormalisation group, and the results that this model generates are called low energy effective
+  theory, in which the system size is reduced but the results are still accurate.
 
 We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, i.e. different
 force fields for different atoms. A similar and perhaps more comprehensible explanation can be made from the theory of renormalisation group.
@@ -110,10 +106,10 @@ The wavefunction of a quantum system is a mathematical construct describing the 
 
 One of the reasons that developing new approaches to tackling electronic structure calculations is of importance is that they are extremely
 computationally expensive. Indeed one of the original motivations for the field of quantum computing was the desire to simulate quantum systems
- in nature by using quantum systems. A prominent driving factor of the interest in and development of quantum computing is the aim to create quantum
+ in nature by using quantum systems. A primary driving factor of the interest in and development of quantum computing is the aim to create quantum
  hardware and software that will allow for efficient quantum simulations of chemical systems. A problem of tantamount importance in quantum chemistry
  is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy eigenvalues define a great deal of properties of
- interest in the molecule. This is of great interest in for example the development of pharmaceuticals where companies have an extremely laborious
+ interest in the molecule. This is of great importance in for example the development of pharmaceuticals where companies have an extremely laborious
  testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings
  and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
 
@@ -258,6 +254,7 @@ larger number of qubits. However, these factors work against each other. If such
 information to manipulate whilst withstanding error. This could revolutionise applications such as pharmaceuticals where cures and treatments
  for complex or incurable diseases such as Cancer, Prion disease and so forth could be engineered. If (or when should I say) this is possible,
   we would have a machine taking on the roles of a chemist, problem solver and designer simultaneously and combined into one entity!
+
 \section{Conclusion and outlook}
 As this is the first scalable simulation of molecular energies on any type of quantum hardware it represents an important step in the history of
 quantum computing applications. The results indicate that for near-term quantum devices without effective error correction the adaptive approach
@@ -274,10 +271,10 @@ Late last year the US passed the new National Quantum Initiative Act pledging ar
  European researchers in quantum technologies over the next decade \cite{eubill}. In the UK, the EPSRC-backed Quantum Technology Hubs represent
  part of a £270 million investment to create national networks of quantum expertise \cite{ukbill}. With this extraordinary push of late across
  Europe and also in the US and China, aiming to fast-track quantum technologies out of university research groups and into industrial applications,
-  the importance of this work in quantum chemistry simulations cannot be overstated. As aside from the much touted almost pop-science status of
-  quantum encryption, the myriad opportunities afforded by more efficient scalable quantum chemistry simulations looms large in garnering serious
-   investor interest. The ability to run quantum simulations of the behaviour of molecules and materials is hoped offer new avenues for increasing
-    our understanding of chemistry and enable the development of new medicines and materials in silico.
+ the importance of this work in quantum chemistry simulations cannot be overstated. As aside from the much touted almost pop-science status of
+ quantum encryption, the myriad opportunities afforded by more efficient scalable quantum chemistry simulations looms large in garnering serious
+ investor interest. The ability to run quantum simulations of the behaviour of molecules and materials is hoped offer new avenues for increasing
+ our understanding of chemistry and enable the development of new medicines and materials in silico.
 
 
 
