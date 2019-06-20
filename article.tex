@@ -66,7 +66,7 @@ Obviously, it demands massive computation to find out the package energy as it c
 
 Molecular mechanics models molecular systems using force fields in classical mechanics. Three approximations were made to reduce the computational
  complexity. Each atom is simulated as one particle; each particle has their designated attributes including radius, Polaris ability and net charge;
- and international are treated as springs with an equilibrium distance same as bond length. Essentially this theory simulates every element of the
+ and interactions are treated as springs with an equilibrium distance same as bond length. Essentially this theory simulates every element of the
  molecular system as if it were fixed particles connected by strings, which hugely reduces the computational complexity.
 
 The renormalisation group is a theory which also enables a reduction in the computational power needed for accurate simulations. A simple scenario
@@ -87,7 +87,7 @@ The computation complexity can still be compressed. We can repeat the process of
 This process is known as renormalisation group, and the results that this model generates are called low energy effective theory, in which the system
  size is reduced but the results are still accurate.
 
-We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, i.e. difference
+We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, i.e. different
 force fields for different atoms. A similar and perhaps more comprehensible explanation can be made from the theory of renormalisation group.
 While decreasing the parameters of calculation and reducing computation time, the accuracy of the result is decreasing as well. Molecular mechanics
  does the same for force fields and interactions inside the atom.
@@ -95,8 +95,8 @@ While decreasing the parameters of calculation and reducing computation time, th
 Overall, the work on simulating molecular energies with classical methods is a trade off between precision and cost. Quantum simulation is able
 to encapsulate all the relevant information of the system, and can simulate efficiently and without approximations.
 
-
 \section{Non-technical background}
+
 In any quantum computing processes, the building blocks of the process are qubits. A qubit, or quantum bit, is the quantum analogue of the classical
  bit (strings of zeros and ones). So the qubit represents a quantum superposition or combination of a predetermined ‘0’ and a ‘1’ state. The quantum
   algorithms were run on superconducting qubits, these are a physical realisation of quantum bits based upon what are known as superconducting
@@ -108,14 +108,14 @@ The wavefunction of a quantum system is a mathematical construct describing the 
   their respective energies. The idea that the motions of the electrons and nuclei may be considered separately is known as the Born-Oppenheimer
   approximation. It is a very useful assumption that simplifies electronic structure calculations appreciably.
 
-One of the reasons that developing new approaches to tackling electronic structure calculations are of importance is that they are extremely
+One of the reasons that developing new approaches to tackling electronic structure calculations is of importance is that they are extremely
 computationally expensive. Indeed one of the original motivations for the field of quantum computing was the desire to simulate quantum systems
- in nature by using quantum systems. A prominent driving factor in the interest in and development of quantum computing is the aim to create quantum
-  hardware and software that will allow for efficient quantum simulations of chemical systems. A problem of tantamount importance in quantum chemistry
-  is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy eigenvalues define a great deal of properties of
-  interest in the molecule. This is of great interest in for example the development of pharmaceuticals where companies have an extremely laborious
-  testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings
-  and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
+ in nature by using quantum systems. A prominent driving factor of the interest in and development of quantum computing is the aim to create quantum
+ hardware and software that will allow for efficient quantum simulations of chemical systems. A problem of tantamount importance in quantum chemistry
+ is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy eigenvalues define a great deal of properties of
+ interest in the molecule. This is of great interest in for example the development of pharmaceuticals where companies have an extremely laborious
+ testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings
+ and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
 
 \section{Techniques in paper}
 If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of
