@@ -146,7 +146,7 @@ then fed through a programme; this proposes settings for a new variable – let 
 This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy. The Figure \ref{VQE} illustrate the key outline of the VQE algorithm.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.75]{VQEdiagram.pdf}
+\includegraphics[scale=1]{VQEdiagram.pdf}
 \end{center}
 \caption{VQE flowchart}\label{VQE}
 \end{figure}
@@ -175,12 +175,19 @@ Similarly, to the VQE algorithm, one must ensure that the system is prepared in 
   turn inducing a phase on the system. Since the way in which the system evolves is controlled, it is now entangled with the initialised state.
  Next, we measure the phase obtained corresponding to each value of energy. The system as a result collapses to a single state with an associated
  probability. We repeat this algorithm for a higher number of ancilla qubits \cite[p.2]{tansuwannont2015quantum} until the lowest eigenenergy is
-  obtained, or more precisely the energy of the ground state.\\
+  obtained, or more precisely the energy of the ground state.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.1]{PEA.pdf}
+\end{center}
+\caption{PEA flowchart}
+\end{figure}
 
 \noindent\setlength{\fboxsep}{0.5em}
 \fbox{\begin{minipage}[c]{31em}%
 \centerline{\textbf{PEA}}
-The molecular energies can be obtained by the time evolution of molecular Hamiltonian. As any state $\ket{\psi(t)}$ evolved by unitary can be represent
+The PEA is a quantum subroutine of the original quantum algorithm for chemistry used to computer eigenenergies of a given molecular structure. As any state $\ket{\psi(t)}$ evolved by unitary can be represent
  by applying phase difference onto initial state $e^{-iEt}\ket{\psi(0)}$. Phase estimation algorithm (PEA) is used then to find this relative phase and
   convert it into energy. In order to preform PEA we need to prepare two parts of qubits. First n qubits of superposition state
    $\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits
@@ -192,7 +199,7 @@ Now let us recap Quantum Fourier Transformation, one transforms the tensor produ
 	\ket{j_{1} j_{2} \cdots j_{n}}\rightarrow \frac{\overbrace{\left(\ket{0}+e^{2 \pi i 0. j_{n}}\ket{1}\right)\left(\ket{0}+e^{2 \pi i 0. j_{n-1} j_{n}}\ket{1}\right) \cdots\left( \ket{0}+e^{2 \pi i 0. j_{1} j_{2} \cdots j_{n-1} j_{n} }\ket{1}\right)}^{\text{our prepared superposition qubits}}}{2^{\frac{n}{2}}}.
 \]
 \end{footnotesize}
-As we can see, the result of QFT is just the first part of qubits we prepared. Therefore we would apply the reverse QFT onto those qubits, and outputs a single state contains all information about phase we want!
+As we can see, the result of QFT is just the first part of qubits we prepared. Therefore we would apply the reverse QFT onto those qubits, and outputs a single state contains all information about phase we want. The algorithm then deduces the relative phase and converts it into energy.
 \end{minipage}}
 
 
