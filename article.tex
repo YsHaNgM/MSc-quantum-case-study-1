@@ -66,7 +66,7 @@ Obviously, it demands massive computation to find out the package energy as it c
 
 Molecular mechanics models molecular systems using force fields in classical mechanics. Three approximations were made to reduce the computational
  complexity. Each atom is simulated as one particle; each particle has their designated attributes including radius, Polaris ability and net charge;
- and international are treated as springs with an equilibrium distance same as bond length. Essentially this theory simulates every element of the
+ and interactions are treated as springs with an equilibrium distance same as bond length. Essentially this theory simulates every element of the
  molecular system as if it were fixed particles connected by strings, which hugely reduces the computational complexity.
 
 The renormalisation group is a theory which also enables a reduction in the computational power needed for accurate simulations. A simple scenario
@@ -87,16 +87,16 @@ The computation complexity can still be compressed. We can repeat the process of
 This process is known as renormalisation group, and the results that this model generates are called low energy effective theory, in which the system
  size is reduced but the results are still accurate.
 
-We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, i.e. difference
+We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, i.e. different
 force fields for different atoms. A similar and perhaps more comprehensible explanation can be made from the theory of renormalisation group.
 While decreasing the parameters of calculation and reducing computation time, the accuracy of the result is decreasing as well. Molecular mechanics
  does the same for force fields and interactions inside the atom.
 
 Overall, the work on simulating molecular energies with classical methods is a trade off between precision and cost. Quantum simulation is able
-to encapsulate all the relevant information of the system, and can simulate efficiently and with high accuracy.
-
+to encapsulate all the relevant information of the system, and can simulate efficiently and without approximations.
 
 \section{Non-technical background}
+
 In any quantum computing processes, the building blocks of the process are qubits. A qubit, or quantum bit, is the quantum analogue of the classical
  bit (strings of zeros and ones). So the qubit represents a quantum superposition or combination of a predetermined ‘0’ and a ‘1’ state. The quantum
   algorithms were run on superconducting qubits, these are a physical realisation of quantum bits based upon what are known as superconducting
@@ -108,14 +108,14 @@ The wavefunction of a quantum system is a mathematical construct describing the 
   their respective energies. The idea that the motions of the electrons and nuclei may be considered separately is known as the Born-Oppenheimer
   approximation. It is a very useful assumption that simplifies electronic structure calculations appreciably.
 
-One of the reasons that developing new approaches to tackling electronic structure calculations are of importance is that they are extremely
-computationally expensive. Indeed one of the original motivations for the field of quantum computing was the desire to simulate quantum systems
- in nature by using quantum systems. A prominent driving factor in the interest in and development of quantum computing is the aim to create quantum
+One of the reasons that developing new approaches to tackling electronic structure calculations is of importance is that they are extremely
+computationally expensive. Indeed one of the original motivations for the field of quantum computing was the desire to simulate quantum systems in nature by using quantum systems. A prominent driving factor in the interest in and development of quantum computing is the aim to create quantum
   hardware and software that will allow for efficient quantum simulations of chemical systems. A problem of tantamount importance in quantum chemistry
   is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy eigenvalues define a great deal of properties of
   interest in the molecule. This is of great importance in for example the development of pharmaceuticals where companies have an extremely laborious
   testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings
   and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
+
 
 \section{Techniques in paper}
 If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of
@@ -135,15 +135,15 @@ which constitutes of the ‘original algorithm for quantum chemistry’.
 
 Before we run our algorithm, it is imperative to understand that in quantum mechanics, the properties of a system are characterised by a state.
 Thus, we first need to prepare an initial state of the system (think of how you prepared the cup for the coffee following boiling water to be
-poured in). This is done by representing the state in a chosen vector $v_0$. The vectors chosen are trial solution (ansatz) since solutions are
+poured in). This is done by representing the state in a chosen vector $v_0$. The vectors chosen are trial solutions (ansatz) since solutions are
  not chosen in reference to any specific value as such.
 
 Once a variable is selected, we can find an estimate value of the energy corresponding to the chosen variable by measuring the average energy.
-The method utilised predicts the ground state, the lowest possible energy level of an atom. The value of the variable and estimate energy are
+The method utilised predicts the ground state, the lowest possible energy level of an atom. The values of the variable and estimate energy are
 then fed through a programme; this proposes settings for a new variable – let us call this variable $v_1$­. Comparing to our coffee example, it
  has been decided that either a new blend of coffee is necessary as the current coffee might be perhaps too strong!
 
-This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation the smallest eigenenergy. The Figure \ref{VQE} illustrate the key outline of the VQE algorithm.
+This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation of the smallest eigenenergy. Figure \ref{VQE} illustrates the key outline of the VQE algorithm.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=1]{VQEdiagram.pdf}
@@ -155,12 +155,12 @@ This process is repeated a number of times until the estimate energy approaches 
 \setlength{\fboxsep}{0.5em}
 \fbox{\begin{minipage}[c]{31em}%
  \centerline{\textbf{VQE}}
-In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQE comprises of classical and quantum features making it possible
+In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQE comprises of classical and quantum features. This makes it possible
  to use both classical and quantum resources to determine solutions to problems that are difficult to solve using a classical computer. The flow
  chart indicates the key instructions of implementing the VQE algorithm. The steps are explained in further detail as follows:
 
 \begin{enumerate}
-\item Preparation: Prepare the initial state of the system in terms of the variable theta by applying a quantum circuit. Implementing the unitary coupled cluster (UCC) method enables the algorithm to predict the ground state.
+\item Preparation: Prepare the initial state of the system in terms of the variable $\vec{\theta}$ by applying a quantum circuit. Implementing the unitary coupled cluster (UCC) method enables the algorithm to predict the ground state.
 \item Measurement: Measure each local Hamiltonian, $H_{\gamma}$  and its corresponding scalar $g_{\gamma}$ to find the average value of the Hamiltonian \cite[p.2]{o2016scalable}.
 \item Minimisation: Use a classical tool to find new solutions of theta in order to find the minimum eigenenergy of the Hamiltonian.
 \item Repetition: By feeding the settings for $\vec{\theta}$ into the classical minimisation routine, the new settings for a new parameter of $\vec{\theta}$ i.e. $\vec{\theta}^{\prime}$. This process is repeated for n iterations until the parameter converges towards to specific value; this will enable an ideal state of the system to be obtained. From this, one can deduce a particular value for $E_{0}$, the smallest energy eigenvalue.
