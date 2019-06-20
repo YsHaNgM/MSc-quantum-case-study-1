@@ -66,33 +66,34 @@ Obviously, it demands massive computation to find out the package energy as it c
 
 Molecular mechanics models molecular systems using force fields in classical mechanics. Three approximations were made to reduce the computational
  complexity. Each atom is simulated as one particle; each particle has their designated attributes including radius, Polaris ability and net charge;
- and international are treated as springs with an equilibrium distance same as bond length. This theory essentially simulated every element of the
- molecular system as fixed particles connected by strings, which largely reduces the computational complexity.
+ and international are treated as springs with an equilibrium distance same as bond length. Essentially this theory simulates every element of the
+ molecular system as if it were fixed particles connected by strings, which hugely reduces the computational complexity.
 
-A similar theory of reducing the amount of computation is called renormalisation group. A simple scenario is to calculate the resistance force of an
- iron ball in a glass of water. We can simply simulate every water molecule in the glass by inputting the real size of a single water molecule as one
-  parameter. The sizes of the molecules can easily be another 1000 parameters as they can be quite irregular and difficult to describe. Forces from
-  multiple directions of the iron ball could be another 1000 parameters. Inputting all parameters, modelling an iron ball and simulating $10^{26}$
-  water molecules and their interactions can give the resistance force. Let’s say we have a supercomputer that allows tremendous amount of data
-  processing and the result that this simulation gives coincides with experimental data perfectly.
+The renormalisation group is a theory which also enables a reduction in the computational power needed for accurate simulations. A simple scenario
+is to calculate the resistance force of an iron ball in a glass of water. We can simply simulate every water molecule in the glass by using the
+ real size of a single water molecule as one parameter - the sizes of the molecules can easily be another 1000 parameters as they can be
+ irregular and difficult to describe. Forces from multiple directions of the iron ball could be another 1000 parameters. Inputting all parameters,
+  modelling an iron ball and simulating $10^{26}$ water molecules and their interactions can give the resistance force. Let’s say we have a
+  supercomputer that allows for a tremendous amount of data processing and the result that this simulation gives coincides with the experimental data
+  to within an extremely high degree of accuracy.
 
-But what if we want to reduce the computational complexity? One solution is to reduce the number of water molecule simulated, which is feasible given
- the relative bigger size of the iron ball. To make up for the loss in number of molecules, the rest parameters can be changed. Let’s say we
- manipulated the parameters and the simulation gives slightly different solutions, but the overall trend is still the same as before.
+But what if we want to reduce the computational complexity? One solution is to reduce the number of water molecules simulated, which is feasible given
+ the relative much larger size of the iron ball. To make up for the loss in number of molecules, the rest if the parameters can be adapted. Whereby we
+can manipulate the parameters and the simulation gives slightly different solutions, but the overall trend is still the same as before.
 
-The computation complexity can still be compressed. We can repeat the process of reducing the number of molecules and adjusting the parameters,
+The computation complexity can still be compressed. We can repeat the process of reducing the number of molecules and adjusting the parameters
  and still generate acceptable solutions.
 
-This process is called renormalisation group, and the results that this model generates is called low energy effective theory, in which the system
- size is reduced but the results is still acceptable and effective.
+This process is known as renormalisation group, and the results that this model generates are called low energy effective theory, in which the system
+ size is reduced but the results are still accurate.
 
-We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, ie difference
+We now return to the theory of molecular mechanics, it is not exactly accurate since it is restricted by parameters of equations, i.e. difference
 force fields for different atoms. A similar and perhaps more comprehensible explanation can be made from the theory of renormalisation group.
 While decreasing the parameters of calculation and reducing computation time, the accuracy of the result is decreasing as well. Molecular mechanics
  does the same for force fields and interactions inside the atom.
 
-Overall, the work on simulation molecular energies with classical methods is a trade off between precision and cost. Quantum simulation is able
-to contain all information relevant to the system and simulate them exactly as reality without approximations.
+Overall, the work on simulating molecular energies with classical methods is a trade off between precision and cost. Quantum simulation is able
+to encapsulate all the relevant information of the system, and can simulate efficiently and without approximations.
 
 
 \section{Non-technical background}
