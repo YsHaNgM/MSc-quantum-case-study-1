@@ -62,10 +62,10 @@ Molecules are composed of collections of atoms, and the units that make up an at
  package that contains many small balls, and the sum of the energy of their collisions is the sum of interactions between atoms.
 
 Obviously, it demands massive computation to find out the package energy as it contains a huge amount of particles. Therefore, some approximations
- need to be made to simply our model, hence molecular mechanics is introduced.
+ need to be made to simply our model, which necessitates the introduction of molecular mechanics.
 
 Molecular mechanics models molecular systems using force fields in classical mechanics. Three approximations were made to reduce the computational
- complexity. Each atom simulated as one particle; each particle has their designated attributes including radius, Polaris ability and a net charge;
+ complexity. Each atom is simulated as one particle; each particle has their designated attributes including radius, Polaris ability and net charge;
  and international are treated as springs with an equilibrium distance same as bond length. This theory essentially simulated every element of the
  molecular system as fixed particles connected by strings, which largely reduces the computational complexity.
 
@@ -115,10 +115,15 @@ computationally expensive. Indeed one of the original motivations for the field 
   interest in the molecule. This is of great interest in for example the development of pharmaceuticals where companies have an extremely laborious
   testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings
   and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
-\section{Techniques in paper}
-If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of teaspoons of coffee (depends on how strong you like your coffee), boil the kettle, pour the hot water into the cup and lastly stir. You have now made your cup of instant coffee by following a set of instructions.
 
-Now, imagine that I asked you to compute the energy surface of a given molecule; how would you carry out this task? You would execute an algorithm that produces a numerical value. In Scalar Quantum of Molecular Energies two techniques used to determine the energy surface for a hydrogen molecule are discussed as follows:
+\section{Techniques in paper}
+If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of
+ teaspoons of coffee (depends on how strong you like your coffee), boil the kettle, pour the hot water into the cup and lastly stir. You have now
+ made your cup of instant coffee by following a set of instructions.
+
+Now, imagine that I asked you to compute the energy surface of a given molecule; how would you carry out this task? You would execute an algorithm
+ that produces a numerical value. In Scalar Quantum of Molecular Energies two techniques used to determine the energy surface for a hydrogen molecule
+ are discussed as follows:
 \begin{itemize}
 \item The Variational Quantum Eigensolver (VQE)
 \item The Quantum Phase Estimation Algorithm (PEA)
@@ -212,11 +217,19 @@ and companies, each with their own pros and cons. Some of the types of implement
 \noindent\setlength{\fboxsep}{0.5em}
 \fbox{\begin{minipage}[c]{31em}%
 \centerline{\textbf{Experimental realisation (SQUID)}}
-The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
+The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of
+superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are
+charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features,
+ which include easy fabrication, fast qubit control and long qubit coherence times.
 
-Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which facilitates the creation of large integrated quantum circuits.
+Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types
+ of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which
+ facilitates the creation of large integrated quantum circuits.
 
-The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation. The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
+The Xmon qubits are placed inside a dilution refrigerator which is at a temperature of 20mK. The inter-qubit coupling, and qubit measurement
+and control, are all done using microwave resonators. Single (or local) quantum gates are achieved using pulses of microwave radiation.
+The entanglement operation used is the controlled-Z or CZ gate, this is achieved by fixing the frequency of one qubit while adiabatically
+tuning the other qubit from the $\ket{11}$ state to near to the $\ket{02}$  state, which gives a relative phase shift. \end{minipage}}
 
 \section{Main Achievement of paper}
 As it is known, building a quantum computer comes with many challenges, one being the aspect of scalability. One of the advantages of using PEA to
