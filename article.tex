@@ -171,7 +171,7 @@ In 2014, the VQE algorithm was created by Alberto Peruzzo and Jarrod McClean. VQ
 Similarly, to the VQE algorithm, one must ensure that the system is prepared in an initial state, but with the exception that the state must have a
  sufficient overlap with the ground state. Once the state is prepared in our desired state, an approximation is applied to the phase of the operator.
   The operator $\hat{U} = e^{-iHt}$ enables the initial state $\ket{\psi(0)}$ to change over time to the state $e^{-iEt}\ket{\psi(0)}$. Consequently,
-  the initial state is mapped onto a superposition state of various qubits, which is called the ancilla qubits. After that, the state is acted on in
+  the initial state is mapped onto a superposition state of various qubits, which is called the ancilla qubits. After that, the state is acted on, in
   turn inducing a phase on the system. Since the way in which the system evolves is controlled, it is now entangled with the initialised state.
  Next, we measure the phase obtained corresponding to each value of energy. The system as a result collapses to a single state with an associated
  probability. We repeat this algorithm for a higher number of ancilla qubits \cite[p.2]{tansuwannont2015quantum} until the lowest eigenenergy is
@@ -188,10 +188,10 @@ Similarly, to the VQE algorithm, one must ensure that the system is prepared in 
 \fbox{\begin{minipage}[c]{31em}%
 \centerline{\textbf{PEA}}
 The PEA is a quantum subroutine of the original quantum algorithm for chemistry used to computer eigenenergies of a given molecular structure. As any state $\ket{\psi(t)}$ evolved by unitary can be represent
- by applying phase difference onto initial state $e^{-iEt}\ket{\psi(0)}$. Phase estimation algorithm (PEA) is used then to find this relative phase and
-  convert it into energy. In order to preform PEA we need to prepare two parts of qubits. First n qubits of superposition state
-   $\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits
-   onto a multiple controlled-U gate, the eigenvalue of each unitary $\hat{U}$ will transform to each one of qubits in first part.
+by applying phase difference onto initial state $e^{-iEt}\ket{\psi(0)}$. Phase estimation algorithm (PEA) is used then to find this relative phase and
+convert it into energy. In order to preform PEA we need to prepare two parts of qubits. First n qubits of superposition state
+$\frac{\ket{0} + \ket{1}}{\sqrt 2}$, second, our initial state. Since we can evolve states by unity operator. By inputting both parts of qubits
+onto a multiple controlled-U gate, the eigenvalue of each unitary $\hat{U}$ will transform to each one of qubits in first part.
 
 Now let us recap Quantum Fourier Transformation, one transforms the tensor product of multiple states onto phase of some superposition states:
 \begin{footnotesize}
