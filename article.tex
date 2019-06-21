@@ -220,19 +220,22 @@ David DiVincenzo in 2000, with a few additional conditions added since. The orig
 \item Qubit-specific measurement capability.
 \end{enumerate}
 
-Now there are a number of different approaches to building physical quantum computing hardware being pursued by various research groups
-and companies, each with their own pros and cons. Some of the types of implemented qubits include trapped ions, nitrogen-vacancy centres,
- quantum silicon photonics and superconducting, to name but a few. The type used here is the Xmon transmon qubit, a superconducting qubit
-  built around a superconducting quantum interference device, or SQUID. Variations of the superconducting qubit are being developed by
-  companies such as D-wave, IBM and Rigetti in the current race for quantum supremacy.
+There are a number of different approaches to building physical quantum computing hardware being pursued by various research groups and companies,
+each with their own advantages and disadvantages. Some of the types of experimentally implemented qubits include trapped ions, nitrogen-vacancy centres,
+ quantum silicon photonics and superconducting, to name but a few. The qubits used to implement the both phase estimation algorithm and the variational
+  quantum eigensolver were Xmon transmon qubits, a superconducting qubit built around a superconducting quantum interference device, or SQUID.
+  A SQUID is made of a superconducting loops and Josephson junctions. The state of a qubit is determined by how many pairs of electrons tunnel
+  across the Josephson junctions. Variations of the superconducting qubit are being developed by companies such as D-wave, IBM and Rigetti in the
+  current race for quantum supremacy.
 
 \noindent\setlength{\fboxsep}{0.5em}
 \fbox{\begin{minipage}[c]{31em}%
-\centerline{\textbf{Experimental realisation (SQUID)}}
-The physical hardware used for implementing the VQE and PEA algorithms is an Xmon qubit which is a variation of the transmon qubit, a class of
-superconducting interference device or SQUID. It is a type of charge qubit, which is to say it is a qubit where it’s ‘0’ and ‘1’ basis states are
-charge states, and the superposition of these charge states is tuned using microwave resonators. The Xmon qubit has a number of favourable features,
- which include easy fabrication, fast qubit control and long qubit coherence times.
+\centerline{\textbf{Experimental Implementation of Quantum Hardware}}
+
+The physical quantum hardware used to implement the VQE and PEA algorithms are Xmon qubits. The Xmon qubit is a variation of the transmon qubit,
+a class superconducting qubit which uses superconducting quantum interference devices, also known as SQUIDs. It is a type of charge qubit, which is
+to say it is a qubit where it’s `0’ and `1’ basis states are charge states, and the superposition of these charge states is tuned using microwave
+resonators. The Xmon qubit has a number of favourable features, which include easy fabrication, fast qubit control and long qubit coherence times.
 
 Using superconducting qubits is an appealing option for quantum hardware because it provides the scalability which is lacking for some other types
  of qubit. This is on account of the fact that for superconductivity the conduction electrons condense to a macroscopic quantum state which
@@ -274,28 +277,30 @@ On the contrary, VQE was proved to be more effective due to its robustness to er
 
 As this is the first scalable simulation of molecular energies on any type of quantum hardware it represents an important step in the history of
 quantum computing applications. The results indicate that for near-term quantum devices without effective error correction the adaptive approach
-represented by the Variational Quantum Eigensolver may have better error resilience than that of standard gate model approach represented by the
-Phase Estimation Algorithm. The expectation is that this work will pave the way for the development of further techniques for intractable calculations
+represented by the variational quantum eigensolver may have better error resilience than that of standard gate model approach represented by the
+phase estimation algorithm. The expectation is that this work will pave the way for the development of further quantum techniques for calculations
  in quantum chemistry. And the final aim is that eventually these variational quantum chemistry techniques will allow for numerically exact simulations
-  of chemical reaction rates, which are of great industrial commercial value. In particular, the efficiency - requiring only short state preparation
- and measurement procedures, and so it is without the normal substantial overhead required for quantum error correction - and robustness to
- error displayed by the experimental implementation of the variational quantum eigensolver technique indicates that this technique might succeed
- where classical techniques fail in solving traditionally intractable problems.
+  of chemical reaction rates, which are of great industrial commercial value. The VQE requires only short state preparation
+ and measurement procedures, and so it is without the normal substantial overhead required for quantum error correction. This improves the efficiency
+ and robustness to error displayed by the experimental implementation of the variational quantum eigensolver technique indicates that this technique
+  might succeed where classical techniques fail in solving traditionally intractable problems.
 
  Mikolaj Uryszek, a researcher in the Strongly Correlated Electron Systems group at UCL, commented that "variational techniques in quantum chemistry
- are becoming increasingly prevalent as a useful benchmarking tool to compare these early stage Quantum devices, and this paper by O’Malley et al.
- represents one of the most accurate quantum chemistry simulations using quantum hardware to date, and is a certainly a promising validation of the
-  development of superconducting qubits for scalable quantum hardware".
+ are becoming increasingly prevalent as a useful benchmarking tool to compare these early stage quantum devices, and this paper by O’Malley et al.
+ represents one of the most accurate quantum chemistry simulations using quantum hardware to date, and is a promising validation of the
+  development of superconducting qubits for scalable quantum hardware". And it certainly heralds an interesting future for the use both of
+  superconducting qubits and variational quantum algorithms for tackling classically intractable problems in quantum chemistry and beyond.
 
 Late last year the US passed the new National Quantum Initiative Act pledging around \textdollar1.2 billion in funding for quantum information science
  \cite{usbill}. At a similar time the EU commission launched the €1 billion Quantum Technologies Flagship which will fund over 5000 of the top
  European researchers in quantum technologies over the next decade \cite{eubill}. In the UK, the EPSRC-backed Quantum Technology Hubs represent
  part of a £270 million investment to create national networks of quantum expertise \cite{ukbill}. With this extraordinary push of late across
  Europe and also in the US and China, aiming to fast-track quantum technologies out of university research groups and into industrial applications,
- the importance of this work in quantum chemistry simulations cannot be overstated. As aside from the much touted almost pop-science status of
+ the importance of this work in quantum chemistry cannot be overstated. As aside from the much touted almost pop-science status of
  quantum encryption and communication, the myriad opportunities afforded by more efficient and scalable quantum chemistry simulations looms large
- in garnering serious investor interest. The ability to run quantum simulations of the behaviour of atoms and molecules is hoped offer new
- avenues for increasing our understanding of chemistry and enable the development of new medicines and materials in silico.
+ in garnering serious investor interest. The ability to run quantum simulations of the behaviour of atoms and molecules is hoped to offer new
+ avenues for increasing our understanding of chemistry and enable the development of new medicines and materials in silico, thereby reducing
+ the need for expensive trial-and-error approaches to research and development.
 
 
 
