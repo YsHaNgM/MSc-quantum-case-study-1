@@ -30,8 +30,11 @@
 \date{\today}
 \maketitle
 \section{Introduction}
-“Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful
+``Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful
  problem, because it doesn't look so easy.” Richard Feynman’s words are as true today as when he spoke them almost forty years ago.
+ And it is this opinion of Feynman among others which prompted the enormous effort that has been expended on the development of quantum computing
+ since then. The paper `Scalable Quantum Simulation of Molecular Energies' by O’Malley et al. is evidence of just how far the technology
+  has come in this time, and indicates what we might expect from superconducting quantum computing technologies in the future.
 
 Simulation of physical systems is one of the most crucial practical applications of computation by far.  For example, buildings are engineered in a safe
 and cost efficient way though the application of ﬁnite element analysis and modeling. The field of aeronautics relies heavily on computational ﬂuid
@@ -94,10 +97,10 @@ to encapsulate all the relevant information of the system, and can simulate effi
 \section{Non-technical background}
 
 The building blocks of any quantum computing process may be considered to be qubits. A qubit, or quantum bit, is the quantum analogue of the
-classical bit in which classical information is encoded in 0s and 1s. So the qubit represents a quantum superposition or simultaneous combination of
-both a predetermined ‘0’ and a ‘1’ state. The quantum algorithms were run on superconducting qubits, these are a physical realisation of quantum bits
- based upon what are known as superconducting interference devices (SQUIDs), and attempt to find properties of the wavefunction of the molecule
- (in this case molecular Hydrogen).
+classical bit in which classical information is encoded in 0s and 1s. So the qubit represents a quantum superposition, or simultaneous combination, of
+both a predetermined `0’ and a `1’ state. In paper by O’Malley et al., the quantum algorithms were run on superconducting qubits. These are a
+physical realisation of quantum bits based upon what are known as superconducting quantum interference devices (SQUIDs), and they are used here
+to find properties of the wavefunction of molecular Hydrogen.
 
 The wavefunction of a quantum system is a mathematical construct describing the state; it provides probabilities for results of particular measurements
  made on the state. In quantum chemistry the electronic structure of a molecule is described by the movement of the electrons of a collection of fixed
@@ -106,15 +109,17 @@ The wavefunction of a quantum system is a mathematical construct describing the 
   approximation. It is a very useful assumption that simplifies electronic structure calculations appreciably.
 
 One of the reasons that developing new approaches to tackling electronic structure calculations is of importance is that they are extremely
-computationally expensive. Indeed one of the original motivations for the field of quantum computing was the desire to simulate quantum systems in
-nature by using quantum systems. A prominent driving factor in the interest in and development of quantum computing is the aim to create quantum
- hardware and software that will allow for efficient quantum simulations of chemical systems. Dr Abolfazl Bayat of the Controlled
- Quantum Dynamics research group at UCL states that "noise-resilient quantum computers would have transformative effects in many fields, but especially
-  in quantum chemistry where efficient quantum simulations would represent a significant leap forward for the field". A problem of tantamount importance in quantum chemistry
- is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy eigenvalues define a great deal of properties of
- interest in the molecule. This is of great importance in for example the development of pharmaceuticals where companies have an extremely laborious
- testing and trials process, if a significant part of the initial testing process could be done in silico - this would represent significant savings
- and would better ensure that the pharmaceutical under development behaved as required prior to starting trials.
+computationally expensive. Indeed one of the original motivations for advancing the field of quantum computing was the desire to simulate quantum
+ systems in nature through the use of quantum systems, and by so doing to circumvent the exponential computing power needed to do these simulations
+ on classical hardware. A prominent driving factor in the interest in and development of quantum computing is the aim to create quantum hardware
+ and software that will allow for efficient quantum simulations of quantum chemical systems. Dr Abolfazl Bayat, a researcher at the Controlled
+ Quantum Dynamics research group at UCL, states that "noise-resilient quantum computers would have transformative effects upon many fields,
+ but especially in quantum chemistry where efficient quantum simulations would represent a significant leap forward for the field". A problem of
+ tantamount importance in quantum chemistry is that of finding the lowest energy eigenvalue of molecular electronic structures. These energy
+ eigenvalues define a great deal of properties of interest in the molecule. This is of great importance in for example the development of
+ pharmaceuticals where companies have an extremely laborious testing and trials process, if a significant part of the initial testing process
+ could be done in silico - this would represent significant savings and would better ensure that the pharmaceutical under development behaved as
+ required prior to starting trials.
 
 \section{Techniques in paper}
 If I asked you how to make a cup of coffee, your response would go a little something like this; prepare a cup (clean of course), put a number of
