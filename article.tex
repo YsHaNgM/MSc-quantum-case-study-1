@@ -33,7 +33,7 @@
 ``Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful
  problem, because it doesn't look so easy.” Richard Feynman’s words are as true today as when he spoke them almost forty years ago.
  And it is this opinion of Feynman among others which prompted the enormous effort that has been expended on the development of quantum computing
- since then. The paper `Scalable Quantum Simulation of Molecular Energies' by O’Malley et al. is evidence of just how far the technology
+ since then. The paper `Scalable Quantum Simulation of Molecular Energies' \cite{o2016scalable} by O’Malley et al. is evidence of just how far the technology
   has come in this time, and indicates what we might expect from superconducting quantum computing technologies in the future.
 
 Simulation of physical systems is one of the most crucial practical applications of computation by far.  For example, buildings are engineered in a safe
@@ -98,7 +98,7 @@ to encapsulate all the relevant information of the system, and can simulate effi
 
 The building blocks of any quantum computing process may be considered to be qubits. A qubit, or quantum bit, is the quantum analogue of the
 classical bit in which classical information is encoded in 0s and 1s. So the qubit represents a quantum superposition, or simultaneous combination, of
-both a predetermined `0’ and a `1’ state. In paper by O’Malley et al., the quantum algorithms were run on superconducting qubits. These are a
+both a predetermined `0’ and a `1’ state. In paper \cite{o2016scalable} by O’Malley et al., the quantum algorithms were run on superconducting qubits. These are a
 physical realisation of quantum bits based upon what are known as superconducting quantum interference devices (SQUIDs), and they are used here
 to find properties of the wavefunction of molecular Hydrogen.
 
@@ -146,14 +146,13 @@ Once a variable is selected, we can find an estimate value of the energy corresp
 The method utilised predicts the ground state, the lowest possible energy level of an atom. The values of the variable and estimate energy are
 then fed through a programme; this proposes settings for a new variable – let us call this variable $v_1$­. Comparing to our coffee example, it
  has been decided that either a new blend of coffee is necessary as the current coffee might be perhaps too strong!
-
-This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation of the smallest eigenenergy. Figure \ref{VQE} illustrates the key outline of the VQE algorithm.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=1]{VQEdiagram.pdf}
 \end{center}
 \caption{VQE flowchart}\label{VQE}
 \end{figure}
+This process is repeated a number of times until the estimate energy approaches a specific value. The final result is an approximation of the smallest eigenenergy. Figure \ref{VQE} illustrates the key outline of the VQE algorithm.
 
 \noindent
 \setlength{\fboxsep}{0.5em}
@@ -304,7 +303,7 @@ Late last year the US passed the new National Quantum Initiative Act pledging ar
 
 \section{Afterword}
 
-Shuhao Yang wrote the Introduction and History sections and the PEA section and box. James Mills wrote the Scientific Background and Conclusion
+This article is inspired by Scalable quantum simulation of molecular energies \cite{o2016scalable}. Shuhao Yang wrote the Introduction and History sections and the PEA section and box. James Mills wrote the Scientific Background and Conclusion
 and Outlook sections and the Experimental Implementation section and box. Shanice St John wrote the Techniques in Paper section introduction and
 the Main Achievement of Paper section, and the VQE section and box. However we all continually edited and redrafted together as group, and similarly
  jointly interviewed the academics whose opinions we quoted in the article. We would like to thank Dr Abolfazl Bayat, Prof. Dan Browne and Mikolaj
